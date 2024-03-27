@@ -29,11 +29,10 @@ $Env:PYTHONPYCACHEPREFIX = "$Env:Temp/pycache"
 
 # * -------------------------------------------------------------------------------- * #
 # * Activate virtual environment
-if (Test-Path ($scripts = '.venv/Scripts')) {
-    & "$scripts/Activate.ps1"
+if (Test-Path '.venv') {
+    if (Test-Path '.venv/Scripts') { .venv/Scripts/Activate.ps1 }
+    else { .venv/bin/activate.ps1 }
 }
-$bin = ".venv/bin"
-& "$bin/activate.ps1"
 
 # * -------------------------------------------------------------------------------- * #
 # * Interactive
