@@ -1,0 +1,23 @@
+[user]
+	email = blake.naccarato@gmail.com
+	name = blakeNaccarato
+[core]
+	autocrlf = true
+	safecrlf = false
+	editor = code --wait
+	longpaths = true
+[fetch]
+	prune = true
+[pull]
+	rebase = true
+[push]
+    autoSetupRemote = true
+[diff]
+    tool = default-difftool
+	colorMoved = dimmed_zebra
+[difftool "default-difftool"]
+    cmd = code --wait --diff $LOCAL $REMOTE
+[merge]
+  	tool = code
+[mergetool "code"]
+  	cmd = code --wait --merge $REMOTE $LOCAL $BASE $MERGED
