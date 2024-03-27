@@ -48,7 +48,9 @@ try {
     # ! ---------------------------------------------------------------------------- ! #
     Set-PSReadLineOption -PredictionSource HistoryAndPlugin
     # ! ---------------------------------------------------------------------------- ! #
-    Import-Module CompletionPredictor
+    $pred = 'CompletionPredictor'
+    if (!(Get-Module $pred -ListAvailable)) { Install-Module $pred -Force }
+    Import-Module $pred
     #? Make word-by-word completion the default, Shift+Tab for full suggestion complete
     Set-PSReadLineKeyHandler -Chord Tab -Function AcceptNextSuggestionWord
     Set-PSReadLineKeyHandler -Chord Shift+Tab -Function TabCompleteNext
