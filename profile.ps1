@@ -14,7 +14,7 @@ $Env:PYDEVD_DISABLE_FILE_VALIDATION = 1
 $Env:PATH = "bin;$Env:PATH"
 if (Test-Path '.venv') {
     if (Test-Path '.venv/Scripts') { .venv/Scripts/Activate.ps1 }
-    else { .venv/bin/activate.ps1 }
+    else { .venv/bin/Activate.ps1 }
 }
 
 # ! Everything below skipped by early return if virtual terminal is unsupported.
