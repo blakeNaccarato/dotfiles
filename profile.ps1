@@ -32,7 +32,7 @@ $Env:PYTHONPYCACHEPREFIX = "$Env:Temp/pycache"
 if (Test-Path ($scripts = '.venv/Scripts')) {
     & "$scripts/Activate.ps1"
 }
-$bin = "$Path/bin"
+$bin = ".venv/bin"
 & "$bin/activate.ps1"
 
 # * -------------------------------------------------------------------------------- * #
